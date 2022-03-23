@@ -35,18 +35,17 @@
      <div class="mb-3 row">
      	<div class="form-group">
     		<label for="">fecha alquiler:</label>
-   		 	<input type="date" class="form-control" id="" name="fecha_ingreso" required>
+   		 	<input type="date" class="form-control" id="fecha_salida" name="fecha_salida" required>
   		</div>
   	</div>
-
+    
+    <?php $current_date = strtotime("today"); ?>
   	<div class="mb-3 row">
      	<div class="form-group">
     		<label for="">fecha devolucion:</label>
-   		 	<input type="date" class="form-control" id="" name="fecha_devolucion" required>
+   		 	<input type="date" class="form-control" id="fecha_retorno" name="fecha_retorno" min="<?= date("Y/m/d", $current_date) ?>" max="<?= date('y/m/d', strtotime("+5 days", $current_date)); ?>" required>
   		</div>
   	</div>
-
-
   
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
