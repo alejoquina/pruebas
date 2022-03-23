@@ -1,0 +1,9 @@
+<IfModule mod_rewrite.c>
+	Options All -indexes
+	RewriteEngine On
+	ErrorDocument 404 http://localhost/examen3/
+	RewriteCond %{SCRIPT_FILENAME} !-d
+	RewriteCond %{SCRIPT_FILENAME} !-f
+	RewriteRule ^(.*)/(.*) index.php?controller=$1&action=$2
+</Ifmodule>
+
